@@ -384,9 +384,11 @@
   }
   function drawWallText(w,h,ink,acc,onPhoto){
     var goal=state.goal.trim()||"Your goal goes here";
-    var font="700 78px Georgia, 'Times New Roman', serif";
-    var lines=wrap(goal,font,w-160); if(lines.length>4){font="700 62px Georgia, serif";lines=wrap(goal,font,w-160);}
-    var lh=parseInt(font)*1.22, startY=h*0.60 - lines.length*lh/2;
+    var fs=78, font="700 "+fs+"px Georgia, 'Times New Roman', serif";
+    var lines=wrap(goal,font,w-160);
+    if(lines.length>4){fs=62;font="700 "+fs+"px Georgia, serif";lines=wrap(goal,font,w-160);}
+    if(lines.length>6){fs=50;font="700 "+fs+"px Georgia, serif";lines=wrap(goal,font,w-160);}
+    var lh=fs*1.22, startY=h*0.60 - lines.length*lh/2;
     if(onPhoto){ctx.save();ctx.shadowColor="rgba(0,0,0,.5)";ctx.shadowBlur=22;ctx.shadowOffsetY=3;}
     block(lines,w/2,startY,lh,font,ink,"center");
     if(onPhoto)ctx.restore();
