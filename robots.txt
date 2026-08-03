@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pittner.github.io/free-vision-board-maker/sitemap.xml
