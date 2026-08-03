@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Vision Board Maker &amp; Phone Wallpaper Generator (2026) — No Signup, 100% Private</title>
+<meta name="description" content="Make a free digital vision board and a matching phone lock-screen wallpaper right in your browser. No signup, nothing uploaded — 100% private. Add your goal, your own photos, and one next step, then download in seconds. Free forever.">
+<meta name="keywords" content="free vision board maker, digital vision board maker, vision board template, online vision board, phone wallpaper vision board, lock screen goal, manifestation board, vision board ideas 2026, monthly reset template">
+<meta name="author" content="VisionBoard">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://pittner.github.io/free-vision-board-maker/">
+<meta property="og:title" content="Free Vision Board Maker &amp; Phone Wallpaper Generator">
+<meta property="og:description" content="Turn your goal into a vision board + lock-screen wallpaper in your browser. Free, no signup, 100% private — nothing leaves your device.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pittner.github.io/free-vision-board-maker/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Vision Board Maker &amp; Phone Wallpaper Generator">
+<meta name="twitter:description" content="Make a vision board + matching phone wallpaper in your browser. Free, private, no signup.">
+<meta name="theme-color" content="#c87a5b">
+<style>
+  :root{
+    --cream:#fbf7f2; --card:#ffffff; --ink:#3f352d; --muted:#8a7d70;
+    --line:#ece2d8; --accent:#c87a5b; --accent-d:#b0623f; --soft:#f4ece3;
+    --shadow:0 10px 30px rgba(88,60,40,.10),0 2px 8px rgba(88,60,40,.06);
+    --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent-d)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+  header.top{text-align:center;padding:44px 20px 8px}
+  header.top .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-d);font-weight:600}
+  header.top h1{font-family:var(--serif);font-weight:700;font-size:clamp(28px,5vw,46px);line-height:1.12;margin:12px 0 10px}
+  header.top p.sub{font-size:clamp(16px,2.2vw,19px);color:var(--muted);max-width:680px;margin:0 auto}
+  .trust{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:20px 0 8px}
+  .trust span{background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--ink);font-weight:500}
+
+  /* App */
+  .app{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:26px;margin:26px 0 10px;align-items:start}
+  @media(max-width:900px){.app{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:22px}
+  .panel h2{font-family:var(--serif);font-size:22px;margin:0 0 4px}
+  .field{margin:18px 0}
+  .field label{display:block;font-weight:600;font-size:14px;margin-bottom:7px}
+  .field .hint{font-weight:400;color:var(--muted);font-size:12.5px}
+  textarea,input[type=text]{width:100%;font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:12px 13px;resize:vertical}
+  textarea:focus,input[type=text]:focus{outline:none;border-color:var(--accent);background:#fff}
+  textarea{min-height:74px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+  .chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:12.5px;color:var(--muted);cursor:pointer;transition:.15s}
+  .chip:hover{border-color:var(--accent);color:var(--accent-d)}
+  .swatches{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+  .sw{width:38px;height:38px;border-radius:11px;cursor:pointer;border:3px solid transparent;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+  .sw.active{border-color:var(--ink)}
+  .seg{display:inline-flex;background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:4px;gap:4px}
+  .seg button{border:0;background:transparent;font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 14px;border-radius:9px;cursor:pointer}
+  .seg button.active{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.08)}
+  .uploader{border:1.5px dashed var(--line);border-radius:14px;padding:16px;text-align:center;background:var(--soft);cursor:pointer;transition:.15s}
+  .uploader:hover{border-color:var(--accent);background:#fff}
+  .uploader b{color:var(--accent-d)}
+  .thumbs{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .thumbs .t{position:relative;width:56px;height:56px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+  .thumbs .t img{width:100%;height:100%;object-fit:cover;display:block}
+  .thumbs .t button{position:absolute;top:2px;right:2px;width:18px;height:18px;border:0;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;font-size:12px;line-height:18px;cursor:pointer;padding:0}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+
+  /* Preview */
+  .preview{position:sticky;top:16px}
+  .stage{display:flex;justify-content:center;align-items:center;background:linear-gradient(160deg,#efe6dc,#f7f0e8);border-radius:16px;padding:18px;min-height:340px}
+  canvas#stage{max-width:100%;max-height:70vh;border-radius:10px;box-shadow:0 14px 40px rgba(80,55,35,.22)}
+  .dl{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
+  .btn{flex:1;min-width:150px;text-align:center;border:0;border-radius:13px;padding:14px 16px;font-family:var(--sans);font-size:15px;font-weight:700;cursor:pointer;text-decoration:none;transition:.15s}
+  .btn.primary{background:var(--accent);color:#fff;box-shadow:0 6px 16px rgba(200,122,91,.32)}
+  .btn.primary:hover{background:var(--accent-d)}
+  .btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+  .btn.ghost:hover{border-color:var(--accent)}
+
+  /* CTA */
+  .cta{margin:34px 0;background:linear-gradient(135deg,#3f352d,#5a4a3c);color:#fff;border-radius:22px;padding:34px 30px;text-align:center;box-shadow:var(--shadow)}
+  .cta h2{font-family:var(--serif);font-size:clamp(23px,3.6vw,32px);margin:0 0 10px;color:#fff}
+  .cta p{max-width:620px;margin:0 auto 20px;color:#efe4d8;font-size:16.5px}
+  .cta .big{display:inline-block;background:#fff;color:#3f352d;font-weight:800;font-size:17px;padding:15px 30px;border-radius:14px;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.25)}
+  .cta .big:hover{transform:translateY(-1px)}
+  .cta small{display:block;margin-top:14px;color:#c9bcae;font-size:13px}
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:640px;margin:22px auto 4px;text-align:left}
+  @media(max-width:560px){.compare{grid-template-columns:1fr}}
+  .compare div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:16px 18px}
+  .compare h4{margin:0 0 8px;font-size:14px;letter-spacing:.03em;color:#fff}
+  .compare ul{margin:0;padding-left:18px;color:#e3d6c8;font-size:14px}
+  .compare li{margin:3px 0}
+
+  /* Content */
+  .content{max-width:760px;margin:40px auto}
+  .content h2{font-family:var(--serif);font-size:clamp(24px,3.4vw,30px);margin:34px 0 8px}
+  .content h3{font-family:var(--serif);font-size:20px;margin:26px 0 6px}
+  .content p,.content li{font-size:16.5px;color:#4a4038}
+  .content ol,.content ul{padding-left:22px}
+  details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px 18px;margin:10px 0}
+  details summary{font-weight:700;cursor:pointer;padding:12px 0;font-size:16px}
+  details p{margin:0 0 14px}
+  footer{border-top:1px solid var(--line);margin-top:40px;padding:28px 20px 60px;text-align:center;color:var(--muted);font-size:14px}
+  footer a{font-weight:600}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow">Free Vision Board Maker</div>
+    <h1>Make your vision board &amp; phone wallpaper — free, in your browser</h1>
+    <p class="sub">Type your goal in your own words, drop in a few photos, and download a vision board <em>and</em> a matching lock-screen wallpaper. No signup. Nothing is uploaded — everything happens on your device.</p>
+    <div class="trust">
+      <span>✓ 100% free</span>
+      <span>✓ No signup</span>
+      <span>✓ Nothing uploaded — fully private</span>
+      <span>✓ Board + phone wallpaper</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="app">
+    <!-- CONTROLS -->
+    <section class="panel" aria-label="Vision board controls">
+      <h2>1. Build it</h2>
+
+      <div class="field">
+        <label for="goal">Your goal — in your own words <span class="hint">(this is what makes a board actually work)</span></label>
+        <textarea id="goal" placeholder="Calm mornings, my own place, work that doesn't drain me by Friday..."></textarea>
+        <div class="chips" id="goalChips"></div>
+      </div>
+
+      <div class="field">
+        <label for="step">One concrete next step <span class="hint">(optional — appears on your wallpaper)</span></label>
+        <input type="text" id="step" placeholder="Book the viewing on Saturday at 10:00">
+      </div>
+
+      <div class="field">
+        <label>Your photos <span class="hint">(optional — add a few that feel like the goal)</span></label>
+        <label class="uploader" for="file">
+          <b>Tap to add photos</b> or drag them here<br><span class="hint">JPG / PNG · stays on your device</span>
+        </label>
+        <input id="file" type="file" accept="image/*" multiple class="sr">
+        <div class="thumbs" id="thumbs"></div>
+      </div>
+
+      <div class="field">
+        <label>Colour mood</label>
+        <div class="swatches" id="swatches"></div>
+      </div>
+
+      <div class="field">
+        <label>Board layout</label>
+        <div class="seg" id="layout" role="group" aria-label="Board layout">
+          <button data-layout="grid" class="active">Grid</button>
+          <button data-layout="hero">Hero</button>
+          <button data-layout="text">Words only</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREVIEW -->
+    <section class="preview panel" aria-label="Preview and download">
+      <div class="row" style="margin-bottom:14px">
+        <h2 style="margin:0">2. Preview &amp; download</h2>
+        <div class="seg" id="mode" role="group" aria-label="Preview mode">
+          <button data-mode="board" class="active">Board</button>
+          <button data-mode="wallpaper">Wallpaper</button>
+        </div>
+      </div>
+      <div class="stage"><canvas id="stage" width="1000" height="1500" aria-label="Vision board preview"></canvas></div>
+      <div class="dl">
+        <button class="btn primary" id="dlBoard">↓ Download board (PNG)</button>
+        <button class="btn ghost" id="dlWall">↓ Download wallpaper</button>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- CTA to VisionBoard -->
+<div class="wrap">
+  <section class="cta">
+    <h2>Want the whole thing done for you in 5 minutes?</h2>
+    <p>This free maker is manual — you find the photos and arrange them. <strong>VisionBoard</strong> is the AI version: type your goal and it generates a finished board, a matching phone wallpaper, an identity statement, <em>and</em> suggests your one next step. No Canva, no designer.</p>
+    <div class="compare">
+      <div>
+        <h4>This free maker</h4>
+        <ul>
+          <li>You bring the photos</li>
+          <li>You arrange the board</li>
+          <li>Great for a quick DIY board</li>
+          <li>Free forever</li>
+        </ul>
+      </div>
+      <div>
+        <h4>VisionBoard (AI)</h4>
+        <ul>
+          <li>AI generates the imagery from your goal</li>
+          <li>Board + wallpaper + identity + next step</li>
+          <li>Free preview before you pay</li>
+          <li>€8.99 one-time · no subscription</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:22px"><a class="big" href="https://visionboard.bemooore.com/?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=free_board_maker" rel="noopener">Try the free AI preview →</a></p>
+    <small>Free preview, no card needed. Unlock HD board + wallpaper pack for €8.99 one-time.</small>
+  </section>
+</div>
+
+<!-- SEO / helpful content -->
+<article class="content">
+  <h2>How to make a vision board that actually works</h2>
+  <p>Most vision boards fail for one reason: they end up as a pretty Pinterest tab you never open again. After making a lot of them, the boards that actually changed behaviour had four things in common. This free tool is built around them.</p>
+
+  <h3>1. Write the goal in <em>your own</em> words first</h3>
+  <p>Before you collect a single image, put your goal into plain language — "calm mornings, my own place, work that doesn't drain me by Friday." Your own words are the seed. Generic quotes and someone else's photos are the reason so many boards feel distant.</p>
+
+  <h3>2. Put it where you can't avoid it: your lock screen</h3>
+  <p>You unlock your phone 80–150 times a day. A vision board hidden in a folder does nothing; the same board as your lock-screen wallpaper becomes impossible to ignore. That's why this tool exports a phone wallpaper, not just a board — download it and set it as your lock screen today, not "someday."</p>
+
+  <h3>3. Attach one concrete next step</h3>
+  <p>A board shows the destination; a next step gives you the first move. Add a single, specific action with a time ("book the viewing Saturday 10:00") so the goal turns into momentum instead of a mood.</p>
+
+  <h3>4. Refresh it monthly</h3>
+  <p>Goals shift. Treat your board like a monthly reset — redo it at the start of each month so it always reflects where you're actually heading.</p>
+
+  <h2>Free vision board maker — FAQ</h2>
+  <details><summary>Is this vision board maker really free?</summary><p>Yes — completely free, no signup, no watermark, no limits. It runs entirely in your browser.</p></details>
+  <details><summary>Do my photos get uploaded anywhere?</summary><p>No. Every image you add is processed locally on your device and never leaves your browser. There is no server and no account.</p></details>
+  <details><summary>Can I make a phone wallpaper too?</summary><p>Yes. Switch the preview to "Wallpaper" and download a 1080×1920 lock-screen image sized for phones, with your goal and next step on it.</p></details>
+  <details><summary>What's the difference between this and VisionBoard?</summary><p>This free maker is manual — you supply and arrange the photos. <a href="https://visionboard.bemooore.com/?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=free_board_maker" rel="noopener">VisionBoard</a> is the AI version: it generates the imagery, board, wallpaper, identity statement and a suggested next step from just your goal, in about 5 minutes. Free preview, then €8.99 one-time.</p></details>
+  <details><summary>Do vision boards actually work?</summary><p>They work when the goal is personal, visible daily, and tied to action — not as magic, but as a constant cue. More on the science and method in this <a href="https://visionboard.bemooore.com/blog/do-vision-boards-work?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=free_board_maker" rel="noopener">guide to whether vision boards work</a>.</p></details>
+
+  <h2>More free resources</h2>
+  <ul>
+    <li><a href="https://pittner.github.io/vision-board-prompts/">48 free AI image prompts for vision boards</a> — a companion prompt pack for generating board imagery.</li>
+    <li><a href="https://visionboard.bemooore.com/blog/how-to-make-a-vision-board?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=free_board_maker" rel="noopener">How to make a vision board (step-by-step)</a></li>
+    <li><a href="https://visionboard.bemooore.com/blog/vision-board-ideas?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=free_board_maker" rel="noopener">Vision board ideas for 2026</a></li>
+  </ul>
+</article>
+
+<footer>
+  <div class="wrap">
+    <p>Free Vision Board Maker · a free tool by <a href="https://visionboard.bemooore.com/?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=free_board_maker" rel="noopener">VisionBoard</a> — the AI vision board generator.<br>
+    Made something you love? The AI version does board + wallpaper + next step in 5 minutes: <a href="https://visionboard.bemooore.com/?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=free_board_maker_footer" rel="noopener">visionboard.bemooore.com</a></p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Free Vision Board Maker & Phone Wallpaper Generator",
+  "url":"https://pittner.github.io/free-vision-board-maker/",
+  "applicationCategory":"DesignApplication",
+  "operatingSystem":"Any (web browser)",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},
+  "description":"Make a free digital vision board and a matching phone lock-screen wallpaper in your browser. No signup, nothing uploaded. Add your goal, your photos and one next step, then download.",
+  "featureList":["Digital vision board maker","Phone lock-screen wallpaper export","100% client-side / private","No signup","Free"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Is this vision board maker really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no signup, no watermark and no limits. It runs entirely in your browser."}},
+    {"@type":"Question","name":"Do my photos get uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Every image is processed locally in your browser and never leaves your device. There is no server and no account."}},
+    {"@type":"Question","name":"Can I make a phone wallpaper too?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the preview to Wallpaper and download a 1080x1920 lock-screen image with your goal and next step on it."}},
+    {"@type":"Question","name":"Do vision boards actually work?","acceptedAnswer":{"@type":"Answer","text":"They work when the goal is personal, visible daily and tied to a concrete next action, acting as a constant cue rather than magic."}}
+  ]
+}
+</script>
+
+<script>
+(function(){
+  "use strict";
+  var THEMES={
+    cream:{n:"Cream",s:["#FFF8F0","#EAD7C4"],ink:"#4A3F35",acc:"#C89B7B"},
+    peach:{n:"Peach",s:["#FBE7DE","#E7B6A4"],ink:"#5A3D33",acc:"#D98B6F"},
+    sage:{n:"Sage",s:["#EDF2E9","#C4D5BB"],ink:"#3B4A38",acc:"#8AA57E"},
+    lav:{n:"Lavender",s:["#F1EBF6","#D3C3DF"],ink:"#443A52",acc:"#A088B8"},
+    sky:{n:"Sky",s:["#EAF2F6","#BFD7E5"],ink:"#33454F",acc:"#7BA8C4"},
+    mocha:{n:"Mocha",s:["#F0E8E1","#C6B0A0"],ink:"#43382F",acc:"#9C7B5F"}
+  };
+  var EXAMPLES=[
+    "Calm mornings, my own place, work that doesn't drain me",
+    "Career upgrade + a role I'm proud of by summer",
+    "Fitness glow-up — strong, rested, consistent",
+    "Breakup recovery: new city, new direction, new me",
+    "Financial calm — savings, no money stress",
+    "Travel more, say yes, meet new people"
+  ];
+  var state={goal:"",step:"",theme:"cream",layout:"grid",mode:"board",images:[]};
+  var cv=document.getElementById("stage"), ctx=cv.getContext("2d");
+  var SIZE={board:[1000,1500],wallpaper:[1080,1920]};
+
+  // ---- helpers ----
+  function rr(x,y,w,h,r){r=Math.min(r,w/2,h/2);ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+  function cover(img,x,y,w,h,r){
+    var ir=img.width/img.height, cr=w/h, sw,sh,sx,sy;
+    if(ir>cr){sh=img.height;sw=sh*cr;sx=(img.width-sw)/2;sy=0;} else {sw=img.width;sh=sw/cr;sx=0;sy=(img.height-sh)/2;}
+    ctx.save();rr(x,y,w,h,r||0);ctx.clip();ctx.drawImage(img,sx,sy,sw,sh,x,y,w,h);ctx.restore();
+  }
+  function wrap(text,font,maxW){
+    ctx.font=font; var words=(text||"").split(/\s+/), lines=[], line="";
+    for(var i=0;i<words.length;i++){
+      var t=line?line+" "+words[i]:words[i];
+      if(ctx.measureText(t).width>maxW && line){lines.push(line);line=words[i];} else line=t;
+    }
+    if(line)lines.push(line);
+    return lines;
+  }
+  function block(lines,cx,topY,lh,font,color,align){
+    ctx.font=font;ctx.fillStyle=color;ctx.textAlign=align||"center";ctx.textBaseline="alphabetic";
+    for(var i=0;i<lines.length;i++)ctx.fillText(lines[i],cx,topY+i*lh);
+    return topY+lines.length*lh;
+  }
+  function bg(w,h,th){var g=ctx.createLinearGradient(0,0,w,h);g.addColorStop(0,th.s[0]);g.addColorStop(1,th.s[1]);ctx.fillStyle=g;ctx.fillRect(0,0,w,h);}
+  function grain(w,h){/* subtle vignette for depth */var g=ctx.createRadialGradient(w/2,h*0.42,h*0.2,w/2,h*0.5,h*0.75);g.addColorStop(0,"rgba(255,255,255,0)");g.addColorStop(1,"rgba(60,40,25,0.06)");ctx.fillStyle=g;ctx.fillRect(0,0,w,h);}
+
+  function drawGrid(imgs,x,y,w,h){
+    var n=imgs.length; if(!n)return;
+    var cols=Math.ceil(Math.sqrt(n)), rows=Math.ceil(n/cols), gap=16;
+    var cw=(w-gap*(cols-1))/cols, ch=(h-gap*(rows-1))/rows;
+    for(var i=0;i<n;i++){var c=i%cols,r=Math.floor(i/cols);cover(imgs[i],x+c*(cw+gap),y+r*(ch+gap),cw,ch,20);}
+  }
+  function drawHero(imgs,x,y,w,h){
+    var gap=16;
+    if(imgs.length===1){cover(imgs[0],x,y,w,h,20);return;}
+    var heroH=h*0.62, stripH=h-heroH-gap;
+    cover(imgs[0],x,y,w,heroH,20);
+    var rest=imgs.slice(1,4), m=rest.length||1, sw=(w-gap*(m-1))/m;
+    for(var i=0;i<rest.length;i++)cover(rest[i],x+i*(sw+gap),y+heroH+gap,sw,stripH,20);
+  }
+
+  function renderBoard(w,h,th){
+    bg(w,h,th);
+    var m=58, imgs=state.images;
+    var hasImg=imgs.length && state.layout!=="text";
+    var goalArea = hasImg ? {x:m,y:h*0.665,w:w-2*m,h:h*0.335-m} : {x:m,y:h*0.30,w:w-2*m,h:h*0.42};
+    if(hasImg){
+      var ix=m,iy=m,iw=w-2*m,ih=h*0.665-m-14;
+      if(state.layout==="hero")drawHero(imgs,ix,iy,iw,ih); else drawGrid(imgs,ix,iy,iw,ih);
+    }
+    // goal card
+    var goal=state.goal.trim()||"Your goal goes here";
+    if(hasImg){
+      ctx.save();ctx.shadowColor="rgba(70,45,25,.14)";ctx.shadowBlur=26;ctx.shadowOffsetY=8;
+      ctx.fillStyle="rgba(255,255,255,.94)";rr(goalArea.x,goalArea.y,goalArea.w,goalArea.h,26);ctx.fill();ctx.restore();
+      ctx.fillStyle=th.acc;rr(goalArea.x+goalArea.w/2-30,goalArea.y+26,60,5,3);ctx.fill();
+    }
+    var fs=hasImg?54:74, font="700 "+fs+"px Georgia, 'Times New Roman', serif";
+    var lines=wrap(goal,font,goalArea.w-90); if(lines.length>4){fs=hasImg?42:58;font="700 "+fs+"px Georgia, serif";lines=wrap(goal,font,goalArea.w-90);}
+    var lh=fs*1.2, totalH=lines.length*lh, cy=goalArea.y+goalArea.h/2 - totalH/2 + fs*0.85 + (hasImg?10:0);
+    block(lines,w/2,cy,lh,font,th.ink,"center");
+    if(state.step.trim()){
+      var sf="italic 600 30px Georgia, serif", sl=wrap("→ "+state.step.trim(),sf,goalArea.w-100);
+      block(sl,w/2,goalArea.y+goalArea.h-24-(sl.length-1)*36,36,sf,th.acc,"center");
+    }
+    grain(w,h);
+    // signature
+    ctx.font="600 22px -apple-system, Arial, sans-serif";ctx.fillStyle="rgba(90,70,50,.45)";ctx.textAlign="center";
+    ctx.fillText("visionboard.bemooore.com",w/2,h-26);
+  }
+
+  function renderWallpaper(w,h,th){
+    var imgs=state.images;
+    if(imgs.length && state.layout!=="text"){
+      cover(imgs[0],0,0,w,h,0);
+      var sc=ctx.createLinearGradient(0,0,0,h);
+      sc.addColorStop(0,"rgba(20,14,10,.28)");sc.addColorStop(.45,"rgba(20,14,10,.10)");sc.addColorStop(.72,"rgba(20,14,10,.52)");sc.addColorStop(1,"rgba(15,10,7,.82)");
+      ctx.fillStyle=sc;ctx.fillRect(0,0,w,h);
+      drawWallText(w,h,"#ffffff","rgba(255,255,255,.92)",true);
+    } else {
+      bg(w,h,th);grain(w,h);
+      drawWallText(w,h,th.ink,th.acc,false);
+    }
+    ctx.font="600 24px -apple-system, Arial, sans-serif";ctx.fillStyle=(imgs.length&&state.layout!=="text")?"rgba(255,255,255,.7)":"rgba(90,70,50,.5)";ctx.textAlign="center";
+    ctx.fillText("visionboard.bemooore.com",w/2,h-54);
+  }
+  function drawWallText(w,h,ink,acc,onPhoto){
+    var goal=state.goal.trim()||"Your goal goes here";
+    var font="700 78px Georgia, 'Times New Roman', serif";
+    var lines=wrap(goal,font,w-160); if(lines.length>4){font="700 62px Georgia, serif";lines=wrap(goal,font,w-160);}
+    var lh=parseInt(font)*1.22, startY=h*0.60 - lines.length*lh/2;
+    if(onPhoto){ctx.save();ctx.shadowColor="rgba(0,0,0,.5)";ctx.shadowBlur=22;ctx.shadowOffsetY=3;}
+    block(lines,w/2,startY,lh,font,ink,"center");
+    if(onPhoto)ctx.restore();
+    // accent divider
+    ctx.fillStyle=acc;rr(w/2-40,startY+lines.length*lh+6,80,6,3);ctx.fill();
+    if(state.step.trim()){
+      var cardW=w-200, sf="italic 600 40px Georgia, serif", sl=wrap(state.step.trim(),sf,cardW-90);
+      var ch=sl.length*52+70, cx=100, cyc=h*0.80;
+      ctx.save();
+      ctx.fillStyle=onPhoto?"rgba(255,255,255,.14)":"rgba(255,255,255,.7)";
+      if(onPhoto){ctx.strokeStyle="rgba(255,255,255,.35)";ctx.lineWidth=2;}
+      rr(cx,cyc,cardW,ch,26);ctx.fill();if(onPhoto)ctx.stroke();ctx.restore();
+      ctx.font="600 22px -apple-system, Arial, sans-serif";ctx.fillStyle=acc;ctx.textAlign="center";
+      ctx.fillText("MY NEXT STEP",w/2,cyc+42);
+      block(sl,w/2,cyc+94,52,sf,onPhoto?"#fff":ink,"center");
+    }
+  }
+
+  function render(){
+    var sz=SIZE[state.mode];cv.width=sz[0];cv.height=sz[1];
+    var th=THEMES[state.theme];
+    if(state.mode==="board")renderBoard(sz[0],sz[1],th); else renderWallpaper(sz[0],sz[1],th);
+  }
+
+  function download(mode){
+    var prev=state.mode; state.mode=mode; render();
+    var url=cv.toDataURL("image/png");
+    var a=document.createElement("a");a.href=url;a.download="vision-"+(mode==="board"?"board":"wallpaper")+".png";
+    document.body.appendChild(a);a.click();a.remove();
+    state.mode=prev; render();
+  }
+
+  // ---- UI wiring ----
+  var goalChips=document.getElementById("goalChips");
+  EXAMPLES.forEach(function(ex){var b=document.createElement("button");b.className="chip";b.type="button";b.textContent=ex.length>34?ex.slice(0,32)+"…":ex;b.title=ex;b.onclick=function(){document.getElementById("goal").value=ex;state.goal=ex;render();};goalChips.appendChild(b);});
+
+  var sw=document.getElementById("swatches");
+  Object.keys(THEMES).forEach(function(k){var th=THEMES[k];var d=document.createElement("button");d.type="button";d.className="sw"+(k===state.theme?" active":"");d.style.background="linear-gradient(135deg,"+th.s[0]+","+th.s[1]+")";d.title=th.n;d.setAttribute("aria-label",th.n);d.onclick=function(){state.theme=k;[].forEach.call(sw.children,function(c){c.classList.remove("active");});d.classList.add("active");render();};sw.appendChild(d);});
+
+  document.getElementById("goal").addEventListener("input",function(e){state.goal=e.target.value;render();});
+  document.getElementById("step").addEventListener("input",function(e){state.step=e.target.value;render();});
+
+  document.getElementById("layout").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;state.layout=b.dataset.layout;[].forEach.call(this.children,function(c){c.classList.remove("active");});b.classList.add("active");render();});
+  document.getElementById("mode").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;state.mode=b.dataset.mode;[].forEach.call(this.children,function(c){c.classList.remove("active");});b.classList.add("active");render();});
+
+  var thumbs=document.getElementById("thumbs");
+  function addFiles(files){
+    [].forEach.call(files,function(f){
+      if(!f.type.indexOf||f.type.indexOf("image")!==0)return;
+      var rd=new FileReader();
+      rd.onload=function(ev){var im=new Image();im.onload=function(){state.images.push(im);renderThumbs();render();};im.src=ev.target.result;};
+      rd.readAsDataURL(f);
+    });
+  }
+  function renderThumbs(){
+    thumbs.innerHTML="";
+    state.images.forEach(function(im,i){
+      var d=document.createElement("div");d.className="t";
+      var img=document.createElement("img");img.src=im.src;
+      var x=document.createElement("button");x.type="button";x.textContent="×";x.setAttribute("aria-label","remove");
+      x.onclick=function(){state.images.splice(i,1);renderThumbs();render();};
+      d.appendChild(img);d.appendChild(x);thumbs.appendChild(d);
+    });
+  }
+  document.getElementById("file").addEventListener("change",function(e){addFiles(e.target.files);e.target.value="";});
+  var up=document.querySelector(".uploader");
+  ["dragover","dragenter"].forEach(function(ev){up.addEventListener(ev,function(e){e.preventDefault();up.style.borderColor="#c87a5b";});});
+  ["dragleave","drop"].forEach(function(ev){up.addEventListener(ev,function(e){e.preventDefault();up.style.borderColor="";});});
+  up.addEventListener("drop",function(e){if(e.dataTransfer&&e.dataTransfer.files)addFiles(e.dataTransfer.files);});
+
+  document.getElementById("dlBoard").onclick=function(){download("board");};
+  document.getElementById("dlWall").onclick=function(){download("wallpaper");};
+
+  render();
+})();
+</script>
+</body>
+</html>
