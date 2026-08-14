@@ -25,6 +25,7 @@ This maker is manual — you bring and arrange the photos. **[VisionBoard](https
 ## More free resources
 
 - [48 free AI image prompts for vision boards](https://pittner.github.io/vision-board-prompts/)
+- [Free Habit Tracker (no streak guilt, ADHD-friendly)](https://pittner.github.io/free-habit-tracker-no-streak-guilt/)
 - [How to make a vision board (step-by-step)](https://visionboard.bemooore.com/blog/how-to-make-a-vision-board?utm_source=github&utm_medium=referral&utm_campaign=free_board_maker)
 
 ## License
